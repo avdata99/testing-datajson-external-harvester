@@ -21,7 +21,7 @@ python3 harvest_data_json.py --name "Western Pennsylvania Regional Data Center" 
 
 python3 harvest_data_json.py --name energy-data --url https://www.energy.gov/sites/prod/files/2019/04/f61/doe-pdl-4-8-2019_0.json
 
-#NASA requires more time (--request_timeout), it has 24432 datasets.
+#NASA requires more time (--request_timeout), it has 87MB (24432 datasets) of data.json.
 python3 harvest_data_json.py --name NASA-data --url https://data.nasa.gov/data.json --request_timeout 90
 
 ```
