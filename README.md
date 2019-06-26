@@ -6,11 +6,15 @@ Training for ETL in data.json files.
 
 ```
 usage: harvest_data_json.py [-h] [--url URL] [--name NAME]
+                            [--request_timeout REQUEST_TIMEOUT]
 
 optional arguments:
-  -h, --help   show this help message and exit
-  --url URL    URL of the data.json
-  --name NAME  Name of the resource (for generate the containing folder)
+  -h, --help            show this help message and exit
+  --url URL             URL of the data.json
+  --name NAME           Name of the resource (for generate the containing
+                        folder)
+  --request_timeout REQUEST_TIMEOUT
+                        Request data.json URL timeout
 ```
 ### Real examples
 
