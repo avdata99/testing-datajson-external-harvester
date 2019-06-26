@@ -1,0 +1,380 @@
+Downloaded OK
+JSON OK
+Error validating data: Error validating JsonSchema: 'bureauCode' is a required property
+
+Failed validating 'required' in schema['properties']['dataset']['items']:
+    {'$schema': 'http://json-schema.org/draft-04/schema#',
+     'description': 'The metadata format for all federal open data. '
+                    'Validates a single JSON object entry (as opposed to '
+                    'entire Data.json catalog).',
+     'id': 'https://project-open-data.cio.gov/v1.1/schema/dataset.json#',
+     'properties': {'@type': {'description': 'IRI for the JSON-LD data '
+                                             'type. This should be '
+                                             'dcat:Dataset for each '
+                                             'Dataset',
+                              'enum': ['dcat:Dataset'],
+                              'title': 'Metadata Context'},
+                    'accessLevel': {'description': 'The degree to which '
+                                                   'this dataset could be '
+                                                   'made '
+                                                   'publicly-available, '
+                                                   'regardless of whether '
+                                                   'it has been made '
+                                                   'available. Choices: '
+                                                   'public (Data asset is '
+                                                   'or could be made '
+                                                   'publicly available to '
+                                                   'all without '
+                                                   'restrictions), '
+                                                   'restricted public '
+                                                   '(Data asset is '
+                                                   'available under '
+                                                   'certain use '
+                                                   'restrictions), or '
+                                                   'non-public (Data asset '
+                                                   'is not available to '
+                                                   'members of the public)',
+                                    'enum': ['public',
+                                             'restricted public',
+                                             'non-public'],
+                                    'title': 'Public Access Level'},
+                    'accrualPeriodicity': {'anyOf': [{'enum': ['irregular']},
+                                                     {'pattern': '^R\\/P(?:\\d+(?:\\.\\d+)?Y)?(?:\\d+(?:\\.\\d+)?M)?(?:\\d+(?:\\.\\d+)?W)?(?:\\d+(?:\\.\\d+)?D)?(?:T(?:\\d+(?:\\.\\d+)?H)?(?:\\d+(?:\\.\\d+)?M)?(?:\\d+(?:\\.\\d+)?S)?)?$',
+                                                      'type': 'string'},
+                                                     {'type': 'null'}],
+                                           'description': 'Frequency with '
+                                                          'which dataset '
+                                                          'is published.',
+                                           'title': 'Frequency'},
+                    'bureauCode': {'description': 'Federal agencies, '
+                                                  'combined agency and '
+                                                  'bureau code from <a '
+                                                  'href="http://www.whitehouse.gov/sites/default/files/omb/assets/a11_current_year/app_c.pdf">OMB '
+                                                  'Circular A-11, Appendix '
+                                                  'C</a> in the format of '
+                                                  '<code>015:010</code>.',
+                                   'items': {'pattern': '[0-9]{3}:[0-9]{2}',
+                                             'type': 'string'},
+                                   'minItems': 1,
+                                   'title': 'Bureau Code',
+                                   'type': 'array',
+                                   'uniqueItems': True},
+                    'conformsTo': {'anyOf': [{'format': 'uri',
+                                              'type': 'string'},
+                                             {'type': 'null'}],
+                                   'description': 'URI used to identify a '
+                                                  'standardized '
+                                                  'specification the '
+                                                  'dataset conforms to',
+                                   'title': 'Data Standard'},
+                    'contactPoint': {'$ref': 'vcard.json'},
+                    'dataQuality': {'anyOf': [{'type': 'boolean'},
+                                              {'type': 'null'}],
+                                    'description': 'Whether the dataset '
+                                                   'meets the agency’s '
+                                                   'Information Quality '
+                                                   'Guidelines '
+                                                   '(true/false).',
+                                    'title': 'Data Quality'},
+                    'describedBy': {'anyOf': [{'format': 'uri',
+                                               'type': 'string'},
+                                              {'type': 'null'}],
+                                    'description': 'URL to the data '
+                                                   'dictionary for the '
+                                                   'dataset or API. Note '
+                                                   'that documentation '
+                                                   'other than a data '
+                                                   'dictionary can be '
+                                                   'referenced using '
+                                                   'Related Documents as '
+                                                   'shown in the expanded '
+                                                   'fields.',
+                                    'title': 'Data Dictionary'},
+                    'describedByType': {'anyOf': [{'pattern': '^[-\\w]+/[-\\w]+(\\.[-\\w]+)*([+][-\\w]+)?$',
+                                                   'type': 'string'},
+                                                  {'type': 'null'}],
+                                        'description': 'The '
+                                                       'machine-readable '
+                                                       'file format (IANA '
+                                                       'Media Type or MIME '
+                                                       'Type) of the '
+                                                       'distribution’s '
+                                                       'describedBy URL',
+                                        'title': 'Data Dictionary Type'},
+                    'description': {'description': 'Human-readable '
+                                                   'description (e.g., an '
+                                                   'abstract) with '
+                                                   'sufficient detail to '
+                                                   'enable a user to '
+                                                   'quickly understand '
+                                                   'whether the asset is '
+                                                   'of interest.',
+                                    'minLength': 1,
+                                    'title': 'Description',
+                                    'type': 'string'},
+                    'distribution': {'anyOf': [{'items': {'$ref': 'distribution.json',
+                                                          'minItems': 1,
+                                                          'uniqueItems': True},
+                                                'type': 'array'},
+                                               {'type': 'null'}],
+                                     'description': 'A container for the '
+                                                    'array of Distribution '
+                                                    'objects',
+                                     'title': 'Distribution'},
+                    'identifier': {'description': 'A unique identifier for '
+                                                  'the dataset or API as '
+                                                  'maintained within an '
+                                                  'Agency catalog or '
+                                                  'database.',
+                                   'minLength': 1,
+                                   'title': 'Unique Identifier',
+                                   'type': 'string'},
+                    'isPartOf': {'anyOf': [{'minLength': 1,
+                                            'type': 'string'}],
+                                 'description': 'The collection of which '
+                                                'the dataset is a subset',
+                                 'title': 'Collection'},
+                    'issued': {'anyOf': [{'pattern': '^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$',
+                                          'type': 'string'},
+                                         {'type': 'null'}],
+                               'description': 'Date of formal issuance.',
+                               'title': 'Release Date'},
+                    'keyword': {'description': 'Tags (or keywords) help '
+                                               'users discover your '
+                                               'dataset; please include '
+                                               'terms that would be used '
+                                               'by technical and '
+                                               'non-technical users.',
+                                'items': {'minLength': 1, 'type': 'string'},
+                                'minItems': 1,
+                                'title': 'Tags',
+                                'type': 'array'},
+                    'landingPage': {'anyOf': [{'format': 'uri',
+                                               'type': 'string'},
+                                              {'type': 'null'}],
+                                    'description': 'Alternative landing '
+                                                   'page used to redirect '
+                                                   'user to a contextual, '
+                                                   'Agency-hosted '
+                                                   '“homepage” for the '
+                                                   'Dataset or API when '
+                                                   'selecting this '
+                                                   'resource from the '
+                                                   'Data.gov user '
+                                                   'interface.',
+                                    'title': 'Homepage URL'},
+                    'language': {'anyOf': [{'items': {'pattern': '^(((([A-Za-z]{2,3}(-([A-Za-z]{3}(-[A-Za-z]{3}){0,2}))?)|[A-Za-z]{4}|[A-Za-z]{5,8})(-([A-Za-z]{4}))?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-([0-9A-WY-Za-wy-z](-[A-Za-z0-9]{2,8})+))*(-(x(-[A-Za-z0-9]{1,8})+))?)|(x(-[A-Za-z0-9]{1,8})+)|((en-GB-oed|i-ami|i-bnn|i-default|i-enochian|i-hak|i-klingon|i-lux|i-mingo|i-navajo|i-pwn|i-tao|i-tay|i-tsu|sgn-BE-FR|sgn-BE-NL|sgn-CH-DE)|(art-lojban|cel-gaulish|no-bok|no-nyn|zh-guoyu|zh-hakka|zh-min|zh-min-nan|zh-xiang)))$',
+                                                      'type': 'string'},
+                                            'type': 'array'},
+                                           {'type': 'null'}],
+                                 'description': 'The language of the '
+                                                'dataset.',
+                                 'title': 'Language'},
+                    'license': {'anyOf': [{'format': 'uri',
+                                           'type': 'string'},
+                                          {'type': 'null'}],
+                                'description': 'The license dataset or API '
+                                               'is published with. See <a '
+                                               'href="https://project-open-data.cio.gov/open-licenses/">Open '
+                                               'Licenses</a> for more '
+                                               'information.',
+                                'title': 'License'},
+                    'modified': {'anyOf': [{'pattern': '^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$',
+                                            'type': 'string'},
+                                           {'pattern': '^(R\\d*\\/)?P(?:\\d+(?:\\.\\d+)?Y)?(?:\\d+(?:\\.\\d+)?M)?(?:\\d+(?:\\.\\d+)?W)?(?:\\d+(?:\\.\\d+)?D)?(?:T(?:\\d+(?:\\.\\d+)?H)?(?:\\d+(?:\\.\\d+)?M)?(?:\\d+(?:\\.\\d+)?S)?)?$',
+                                            'type': 'string'},
+                                           {'pattern': '^(R\\d*\\/)?([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\4([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\18[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?(\\/)P(?:\\d+(?:\\.\\d+)?Y)?(?:\\d+(?:\\.\\d+)?M)?(?:\\d+(?:\\.\\d+)?W)?(?:\\d+(?:\\.\\d+)?D)?(?:T(?:\\d+(?:\\.\\d+)?H)?(?:\\d+(?:\\.\\d+)?M)?(?:\\d+(?:\\.\\d+)?S)?)?$',
+                                            'type': 'string'}],
+                                 'description': 'Most recent date on which '
+                                                'the dataset was changed, '
+                                                'updated or modified.',
+                                 'title': 'Last Update'},
+                    'primaryITInvestmentUII': {'anyOf': [{'pattern': '[0-9]{3}-[0-9]{9}',
+                                                          'type': 'string'},
+                                                         {'type': 'null'}],
+                                               'description': 'For linking '
+                                                              'a dataset '
+                                                              'with an IT '
+                                                              'Unique '
+                                                              'Investment '
+                                                              'Identifier '
+                                                              '(UII)',
+                                               'title': 'Primary IT '
+                                                        'Investment UII'},
+                    'programCode': {'description': 'Federal agencies, list '
+                                                   'the primary program '
+                                                   'related to this data '
+                                                   'asset, from the <a '
+                                                   'href="http://goals.performance.gov/sites/default/files/images/FederalProgramInventory_FY13_MachineReadable_091613.xls">Federal '
+                                                   'Program Inventory</a>. '
+                                                   'Use the format of '
+                                                   '<code>015:001</code>',
+                                    'items': {'pattern': '[0-9]{3}:[0-9]{3}',
+                                              'type': 'string'},
+                                    'minItems': 1,
+                                    'title': 'Program Code',
+                                    'type': 'array',
+                                    'uniqueItems': True},
+                    'publisher': {'$ref': 'organization.json'},
+                    'references': {'anyOf': [{'items': {'format': 'uri',
+                                                        'type': 'string'},
+                                              'minItems': 1,
+                                              'type': 'array',
+                                              'uniqueItems': True},
+                                             {'type': 'null'}],
+                                   'description': 'Related documents such '
+                                                  'as technical '
+                                                  'information about a '
+                                                  'dataset, developer '
+                                                  'documentation, etc.',
+                                   'title': 'Related Documents'},
+                    'rights': {'anyOf': [{'maxLength': 255,
+                                          'minLength': 1,
+                                          'type': 'string'},
+                                         {'type': 'null'}],
+                               'description': 'This may include '
+                                              'information regarding '
+                                              'access or restrictions '
+                                              'based on privacy, security, '
+                                              'or other policies. This '
+                                              'should also provide an '
+                                              'explanation for the '
+                                              'selected "accessLevel" '
+                                              'including instructions for '
+                                              'how to access a restricted '
+                                              'file, if applicable, or '
+                                              'explanation for why a '
+                                              '"non-public" or "restricted '
+                                              'public" data assetis not '
+                                              '"public," if applicable. '
+                                              'Text, 255 characters.',
+                               'title': 'Rights'},
+                    'spatial': {'anyOf': [{'minLength': 1,
+                                           'type': 'string'},
+                                          {'type': 'null'}],
+                                'description': 'The range of spatial '
+                                               'applicability of a '
+                                               'dataset. Could include a '
+                                               'spatial region like a '
+                                               'bounding box or a named '
+                                               'place.',
+                                'title': 'Spatial'},
+                    'systemOfRecords': {'anyOf': [{'minLength': 1,
+                                                   'type': 'string'},
+                                                  {'type': 'null'}],
+                                        'description': 'If the systems is '
+                                                       'designated as a '
+                                                       'system of records '
+                                                       'under the Privacy '
+                                                       'Act of 1974, '
+                                                       'provide the URL to '
+                                                       'the System of '
+                                                       'Records Notice '
+                                                       'related to this '
+                                                       'dataset.',
+                                        'title': 'System of Records'},
+                    'temporal': {'anyOf': [{'pattern': '^([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?(\\/)([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$',
+                                            'type': 'string'},
+                                           {'pattern': '^(R\\d*\\/)?([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\4([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\18[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?(\\/)P(?:\\d+(?:\\.\\d+)?Y)?(?:\\d+(?:\\.\\d+)?M)?(?:\\d+(?:\\.\\d+)?W)?(?:\\d+(?:\\.\\d+)?D)?(?:T(?:\\d+(?:\\.\\d+)?H)?(?:\\d+(?:\\.\\d+)?M)?(?:\\d+(?:\\.\\d+)?S)?)?$',
+                                            'type': 'string'},
+                                           {'pattern': '^(R\\d*\\/)?P(?:\\d+(?:\\.\\d+)?Y)?(?:\\d+(?:\\.\\d+)?M)?(?:\\d+(?:\\.\\d+)?W)?(?:\\d+(?:\\.\\d+)?D)?(?:T(?:\\d+(?:\\.\\d+)?H)?(?:\\d+(?:\\.\\d+)?M)?(?:\\d+(?:\\.\\d+)?S)?)?\\/([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\4([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\18[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$',
+                                            'type': 'string'},
+                                           {'type': 'null'}],
+                                 'description': 'The range of temporal '
+                                                'applicability of a '
+                                                'dataset (i.e., a start '
+                                                'and end date of '
+                                                'applicability for the '
+                                                'data).',
+                                 'title': 'Temporal'},
+                    'theme': {'anyOf': [{'items': {'minLength': 1,
+                                                   'type': 'string'},
+                                         'minItems': 1,
+                                         'type': 'array',
+                                         'uniqueItems': True},
+                                        {'type': 'null'}],
+                              'description': 'Main thematic category of '
+                                             'the dataset.',
+                              'title': 'Category'},
+                    'title': {'description': 'Human-readable name of the '
+                                             'asset. Should be in plain '
+                                             'English and include '
+                                             'sufficient detail to '
+                                             'facilitate search and '
+                                             'discovery.',
+                              'minLength': 1,
+                              'title': 'Title',
+                              'type': 'string'}},
+     'required': ['bureauCode',
+                  'programCode',
+                  'title',
+                  'description',
+                  'keyword',
+                  'modified',
+                  'publisher',
+                  'contactPoint',
+                  'identifier',
+                  'accessLevel'],
+     'title': 'Project Open Data Dataset',
+     'type': 'object'}
+
+On instance['dataset'][0]:
+    {'@type': 'dcat:Dataset',
+     'accessLevel': 'public',
+     'contactPoint': {'@type': 'vcard:Contact',
+                      'fn': 'Western Pennsylvania Regional Data Center',
+                      'hasEmail': 'mailto:wprdc@pitt.edu'},
+     'description': 'This data set shows 311 service requests in the City '
+                    'of Pittsburgh. This data is collected from the '
+                    'request intake software used by the 311 Response '
+                    'Center in the Department of Innovation & Performance. '
+                    'Requests are collected from phone calls, tweets, '
+                    'emails, a form on the City website, and through the '
+                    '311 mobile application. \r\n'
+                    '\r\n'
+                    'For more information, see the 311 Data User Guide.',
+     'distribution': [{'@type': 'dcat:Distribution',
+                       'accessURL': 'https://data.wprdc.org/datastore/dump/76fda9d0-69be-4dd5-8108-0de7907fc5a4',
+                       'mediaType': 'text/csv',
+                       'title': '311 Data'},
+                      {'@type': 'dcat:Distribution',
+                       'accessURL': 'https://docs.google.com/document/d/1S4uouiP1X06BhJTf-9YPXSAuCDlhousYOn6EpMe-9RM/edit?usp=sharing',
+                       'mediaType': 'text/html',
+                       'title': '311 Data User Guide'},
+                      {'@type': 'dcat:Distribution',
+                       'downloadURL': 'https://data.wprdc.org/dataset/a8f7a1c2-7d4d-4daa-bc30-b866855f0419/resource/d3e98904-4a86-45fb-9041-0826ab8d56d0/download/311-data-dictionary.xlsx',
+                       'mediaType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                       'title': '311 Data Dictionary'},
+                      {'@type': 'dcat:Distribution',
+                       'downloadURL': 'https://data.wprdc.org/dataset/a8f7a1c2-7d4d-4daa-bc30-b866855f0419/resource/7794b313-33be-4a8b-bf80-41751a59b84a/download/311-codebook-request-types.xlsx',
+                       'mediaType': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                       'title': '311 Issue and Category Codebook'},
+                      {'@type': 'dcat:Distribution',
+                       'accessURL': 'https://pittsburghpa.shinyapps.io/BurghsEyeView/',
+                       'mediaType': 'text/html',
+                       'title': "Burgh's Eye View"}],
+     'identifier': 'a8f7a1c2-7d4d-4daa-bc30-b866855f0419',
+     'keyword': ['311',
+                 '_etl',
+                 'paving',
+                 'permits',
+                 'potholes',
+                 'service requests'],
+     'license': 'http://www.opendefinition.org/licenses/cc-by',
+     'modified': '2019-06-26T13:10:03.558442',
+     'publisher': {'@type': 'org:Organization',
+                   'name': 'City of Pittsburgh'},
+     'title': '311 Data'}
+----------------
+
+Validate FAILED: 316 datasets
+ - Dataset: 311 Data
+ - Dataset: Allegheny County Air Quality
+ - Dataset: Pittsburgh PLI Violations Report
+ - Dataset: Fire Incidents in City of Pittsburgh
+ - Dataset: Police Incident Blotter (30 Day)
+ - Dataset: Daily Community Center Attendance
+ - Dataset: Right of Way Permits
+ - Dataset: Allegheny County Weights and Measures Inspections
+ - Dataset: Police Incident Blotter (Archive)
+ ... 

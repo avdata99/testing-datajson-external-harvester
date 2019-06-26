@@ -1,0 +1,63 @@
+{
+  "@context": "https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld",
+  "@id": "https://data.exim.gov/data.json",
+  "@type": "dcat:Catalog",
+  "conformsTo": "https://project-open-data.cio.gov/v1.1/schema",
+  "describedBy": "https://project-open-data.cio.gov/v1.1/schema/catalog.json",
+  "dataset": [
+    {
+      "accessLevel": "public",
+      "bureauCode": [
+        "351:00"
+      ],
+      "landingPage": "https://data.exim.gov/d/vbhv-d8am",
+      "issued": "2018-10-22",
+      "@type": "dcat:Dataset",
+      "modified": "2019-04-29",
+      "keyword": [
+        "export import bank",
+        "guarantee",
+        "insurance",
+        "loan",
+        "working capital"
+      ],
+      "contactPoint": {
+        "@type": "vcard:Contact",
+        "fn": "Export Import Bank Office of Communications 202-565-3200",
+        "hasEmail": "mailto:data@exim.gov"
+      },
+      "publisher": {
+        "@type": "org:Organization",
+        "name": "data.exim.gov"
+      },
+      "identifier": "https://data.exim.gov/api/views/vbhv-d8am",
+      "description": "This file contains all authorizations approved between 10/01/2006 and 12/31/2018\nPlease note that the asterisked Working Capital transactions were extended during the period of EXIM Bank\u2019s lapse in authority in conformance with original authorization agreements. These deals were originally authorized before the lapse as multiyear facilities with annual extensions. This record represents the extension of the prior authorization. EXIM did not authorize new business during its lapse in authority.",
+      "title": "Authorizations From 10/01/2006 Thru 12/31/2018",
+      "programCode": [
+        "351:000"
+      ],
+      "distribution": [
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.exim.gov/api/views/vbhv-d8am/rows.csv?accessType=DOWNLOAD",
+          "mediaType": "text/csv"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.exim.gov/api/views/vbhv-d8am/rows.rdf?accessType=DOWNLOAD",
+          "mediaType": "application/rdf+xml"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.exim.gov/api/views/vbhv-d8am/rows.json?accessType=DOWNLOAD",
+          "mediaType": "application/json"
+        },
+        {
+          "@type": "dcat:Distribution",
+          "downloadURL": "https://data.exim.gov/api/views/vbhv-d8am/rows.xml?accessType=DOWNLOAD",
+          "mediaType": "application/xml"
+        }
+      ]
+    }
+  ]
+}

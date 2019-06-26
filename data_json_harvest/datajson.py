@@ -89,3 +89,27 @@ class DataJSON:
             return False, error
         return True, None
     
+    def normalize_datasets(self):
+        """ Transfor data.json datasets in a standar CKAN-compatible OUT """
+        ret = {'datasets': []}
+        
+        for dataset in self.datasets:
+            normalized_dataset = {'title': dataset['title'],
+                    'description': dataset['description']}
+            ret['datasets'].append(normalized_dataset)
+        return ret
+
+    def save_datasets(self, path):
+        """ save the data package json file. Normalize the data """
+
+        dmp = json.dumps(self.normalize_datasets(), indent=2)
+        f = open(path, 'w')
+        f.write(dmp)
+        f.close()
+    
+    def save_data_json(self, path):
+        """ save the source data.json file """
+        dmp = json.dumps(self.data_json, indent=2)
+        f = open(path, 'w')
+        f.write(dmp)
+        f.close()

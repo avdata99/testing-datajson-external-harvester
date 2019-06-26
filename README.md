@@ -2,13 +2,29 @@
 
 Training for ETL in data.json files.  
 
-Execute examples.py for check some data.json files
+## Usage
 
 ```
-python3 examples.py
-```
+usage: harvest_data_json.py [-h] [--url URL] [--name NAME]
 
-and check for _sample-data-json/*.json_ for files and _sample-data-json/*.json-log_ for process log files.  
+optional arguments:
+  -h, --help   show this help message and exit
+  --url URL    URL of the data.json
+  --name NAME  Name of the resource (for generate the containing folder)
+```
+### Real examples
+
+```
+python3 harvest_data_json.py --name exim --url http://data.exim.gov/data.json
+
+python3 harvest_data_json.py --name "Western Pennsylvania Regional Data Center" --url https://data.wprdc.org/data.json
+
+python3 harvest_data_json.py --name energy-data --url https://www.energy.gov/sites/prod/files/2019/04/f61/doe-pdl-4-8-2019_0.json
+
+#NASA requires more time (--request_timeout), it has 24432 datasets.
+python3 harvest_data_json.py --name NASA-data --url https://data.nasa.gov/data.json --request_timeout 90
+
+```
 
 ## OK example
 
@@ -47,5 +63,5 @@ Validate FAILED. 2868 datasets
  
  ...
  ...
- 
+
 ```

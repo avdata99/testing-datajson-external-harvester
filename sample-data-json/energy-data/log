@@ -1,0 +1,28 @@
+Downloaded OK
+JSON OK
+Error validating data: Error validating JsonSchema: '[[REDACTED-EX B6]]' is not of type 'array'
+
+Failed validating 'type' in schema['properties']['dataset']['items']['properties']['keyword']:
+    {'description': 'Tags (or keywords) help users discover your dataset; '
+                    'please include terms that would be used by technical '
+                    'and non-technical users.',
+     'items': {'minLength': 1, 'type': 'string'},
+     'minItems': 1,
+     'title': 'Tags',
+     'type': 'array'}
+
+On instance['dataset'][43]['keyword']:
+    '[[REDACTED-EX B6]]'
+----------------
+
+Validate FAILED: 2868 datasets
+ - Dataset: Agency Parking
+ - Dataset: Congressional and Intergovernmental Affairs webpage
+ - Dataset: DATA Act for U.S. Department of Energy
+ - Dataset: Agency IT Policy Archive
+ - Dataset: CIO Governance Board Membership List
+ - Dataset: DOE FITARA Milestones
+ - Dataset: DOE Hearings and Appeals Case Decisions
+ - Dataset: DOE IT Reform Cost Savings/Avoidance
+ - Dataset: Enterprise Data Inventory
+ ... 
