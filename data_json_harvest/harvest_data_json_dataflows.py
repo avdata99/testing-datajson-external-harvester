@@ -106,7 +106,7 @@ def clean_duplicated_identifiers(rows):
 if __name__ == '__main__':
 
     # name, url = 'EXIM', 'http://data.exim.gov/data.json'
-    name, url = 'WPRDC', 'https://data.wprdc.org/data.json'
+    name, url = 'WPRDC_FULL', 'https://data.wprdc.org/data.json'
     Flow(
         data_json(url),
         clean_duplicated_identifiers,

@@ -1,0 +1,86 @@
+{
+  "bytes": 836796,
+  "count_of_rows": 316,
+  "hash": "3e16feb32be146ae2fb05bc9d0f7880b",
+  "profile": "data-package",
+  "resources": [
+    {
+      "dialect": {
+        "caseSensitiveHeader": false,
+        "delimiter": ",",
+        "doubleQuote": true,
+        "header": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "encoding": "utf-8",
+      "format": "csv",
+      "name": "res_1",
+      "path": "res_1.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "format": "default",
+            "name": "@type",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "accessLevel",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "contactPoint",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "identifier",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "keyword",
+            "type": "array"
+          },
+          {
+            "format": "default",
+            "name": "license",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "modified",
+            "type": "string"
+          },
+          {
+            "format": "default",
+            "name": "publisher",
+            "type": "object"
+          },
+          {
+            "format": "default",
+            "name": "distribution",
+            "type": "array"
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      }
+    }
+  ]
+}
