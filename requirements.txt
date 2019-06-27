@@ -1,3 +1,4 @@
 python-slugify==3.0.2
 requests==2.22.0
 jsonschema==3.0.1
+dataflows==0.0.56
