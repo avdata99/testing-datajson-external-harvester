@@ -1,7 +1,7 @@
 {
-  "bytes": 836796,
+  "bytes": 237735,
   "count_of_rows": 316,
-  "hash": "3e16feb32be146ae2fb05bc9d0f7880b",
+  "hash": "862ed05fb4ddb559d4346161b14c8662",
   "profile": "data-package",
   "resources": [
     {
@@ -23,23 +23,8 @@
         "fields": [
           {
             "format": "default",
-            "name": "@type",
-            "type": "string"
-          },
-          {
-            "format": "default",
             "name": "title",
             "type": "string"
-          },
-          {
-            "format": "default",
-            "name": "accessLevel",
-            "type": "string"
-          },
-          {
-            "format": "default",
-            "name": "contactPoint",
-            "type": "object"
           },
           {
             "format": "default",
@@ -53,28 +38,8 @@
           },
           {
             "format": "default",
-            "name": "keyword",
-            "type": "array"
-          },
-          {
-            "format": "default",
-            "name": "license",
-            "type": "string"
-          },
-          {
-            "format": "default",
-            "name": "modified",
-            "type": "string"
-          },
-          {
-            "format": "default",
-            "name": "publisher",
-            "type": "object"
-          },
-          {
-            "format": "default",
-            "name": "distribution",
-            "type": "array"
+            "name": "isPartOf",
+            "type": "any"
           }
         ],
         "missingValues": [
