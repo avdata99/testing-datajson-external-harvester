@@ -2,3 +2,5 @@ python-slugify==3.0.2
 requests==2.22.0
 jsonschema==3.0.1
 dataflows==0.0.56
+# ckan-api-client==0.1-beta5
+ckanapi==4.3

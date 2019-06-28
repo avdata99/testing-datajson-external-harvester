@@ -2,7 +2,7 @@
 
 Training for ETL in data.json files.  
 
-## Usage
+## Read data.json
 
 ```
 usage: harvest_data_json.py [-h] [--url URL] [--name NAME]
@@ -67,5 +67,34 @@ Validate FAILED. 2868 datasets
  
  ...
  ...
+
+```
+
+## Read Ckan API
+
+Get paginated resources from a CKAN instance
+Tested with data.gov
+
+```
+python3 data_json_harvest/data_gov_api.py
+
+Searching https://catalog.data.gov/api/3/action/package_list PAGE:1 start:0, rows:1000
+1000 results
+4348 total resources
+Searching https://catalog.data.gov/api/3/action/package_list PAGE:2 start:1000, rows:1000
+1000 results
+9615 total resources
+
+...
+
+Searching https://catalog.data.gov/api/3/action/package_list PAGE:153 start:152000, rows:1000
+1000 results
+735321 total resources
+Searching https://catalog.data.gov/api/3/action/package_list PAGE:154 start:153000, rows:1000
+1000 results
+744662 total resources
+
+...
+
 
 ```
